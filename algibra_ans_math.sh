@@ -23,18 +23,18 @@ do
 	then
 		c_sum="$i) $num+$num2=___";
 		let ans=$num+$num2
-		c_sum_a="$i) $num+$num2=$ans";
+		c_sum_a="$i) $num+h=$ans";
 	elif [ $operator == "-" ];
 	then
 		if [ "$num2" -gt "$num"  ]
         	then
 			c_sum="$i) $num2-$num=___";
 			let ans=$num2-$num
-			c_sum_a="$i) $num2-$num=$ans";
+			c_sum_a="$i) $num2-r=$ans";
 		else
 			c_sum="$i) $num-$num2=___";
 			let ans=$num-$num2
-			c_sum_a="$i) $num-$num2=$ans";
+			c_sum_a="$i) $num-z=$ans";
 		fi
 
 	else

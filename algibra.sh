@@ -1,6 +1,6 @@
 #!/bin/bash
 i=0;
-for num in $(shuf -i 0-299 -n 10) 
+for num in $(shuf -i 0-99 -n 10) 
 do
 	i=$((i + 1))
 	operator="-"
