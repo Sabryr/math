@@ -6,18 +6,18 @@ p_c_sum_a=""
 date > out.txt
 date > out_ans.txt
 
-for num in $(shuf -i 0-99 -n $1) 
+for num in $(shuf -i 0-299 -n $1) 
 do
 	c_sum=""
 	c_sum_a=""
 
 	i=$((i + 1))
 	operator="-"
-	if [ $(($i % 4)) == 0 ] || [ $(($i % 4)) == 5 ]
+	if [ $(($i % 6)) == 0 ] || [ $num -ge 100 ]
 	then
 		operator="+"
 	fi
-	num2=$(shuf -i 0-30 -n 1) 
+	num2=$(shuf -i 0-99 -n 1) 
 
 	if [ $operator == "+" ]
 	then
