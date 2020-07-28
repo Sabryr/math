@@ -16,7 +16,13 @@ else
 		c_sum_a=""
 		i=$((i + 1))
 		operator="-"
-		if [ "$2" == "X" ] && [ $(($i % 4)) == 0 ]
+                if [ "$2" == "X" ] && [ $(($i % 10)) == 0 ] 
+                then
+			arr=(10 14 16 18 12)
+                        num_pos=$(shuf -i 0-4 -n 1) 
+			num=${arr[num_pos]}
+                        operator="/"
+                elif [ "$2" == "X" ] && [ $(($i % 4)) == 0 ]
 		then
 			num=$(shuf -i 3-12 -n 1) 
 			operator="X"
@@ -25,7 +31,7 @@ else
 			operator="+"
 		fi
 
-		if [ $operator == "+" ]
+                if [ $operator == "+" ]
 		then
 			num2=$(shuf -i 0-299 -n 1) 
 			c_sum="$i) $num + $num2=_____";
@@ -51,7 +57,22 @@ else
 			let ans=$num*$num2
 			c_sum_a="$i) $num X $num2=$ans";
 
-
+                elif [ $operator == "/" ]
+                then
+	        	num2=2 
+		       if [[ $(($num % 6)) == 0 ]] 
+                        then
+ 				num2=6
+			elif [ $(($num % 4)) == 0 ]
+			then
+				num2=4
+			else
+ 				num2=2
+			fi
+			c_sum="$i) $num / $num2=_____";
+			#echo let ans=$num/$num2
+			let ans=$num/$num2
+			c_sum_a="$i) $num / $num2=$ans";
 		else
 			echo "error"; 
 		fi
