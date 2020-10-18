@@ -26,7 +26,7 @@ else
 		then
 			num=$(shuf -i 3-12 -n 1) 
 			operator="X"
-		elif [ $(($i % 6)) == 0 ] || [ $num -ge 100 ]
+		elif [ $(($i % 6)) == 0 ] || [ $num -ge 50 ]
 		then
 			operator="+"
 		fi
