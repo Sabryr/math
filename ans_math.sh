@@ -10,21 +10,21 @@ if [ "$1" == "STOP" ]
 then
 	echo "Stoped"
 else
-	for num in $(shuf -i 0-1999 -n $1) 
+	for num in $(shuf -i 0-1999 -n $1)
 	do
 		c_sum=""
 		c_sum_a=""
 		i=$((i + 1))
 		operator="-"
-                if [ "$2" == "X" ] && [ $(($i % 10)) == 0 ] 
+                if [ "$2" == "X" ] && [ $(($i % 4)) == 0 ]
                 then
 			arr=(10 12 14 15 16 18 20 22 24 24 26 27 28 30 32 34 36 38 48)
-                        num_pos=$(shuf -i 0-18 -n 1) 
+                        num_pos=$(shuf -i 0-18 -n 1)
 			num=${arr[num_pos]}
                         operator="/"
-                elif [ "$2" == "X" ] && [ $(($i % 4)) == 0 ]
+                elif [ "$2" == "X" ] && [ $(($i % 2)) == 0 ]
 		then
-			num=$(shuf -i 3-12 -n 1) 
+			num=$(shuf -i 3-12 -n 1)
 			operator="X"
 		elif [ $(($i % 6)) == 0 ] || [ $num -ge 500 ]
 		then
@@ -33,7 +33,7 @@ else
 
                 if [ $operator == "+" ]
 		then
-			num2=$(shuf -i 0-499 -n 1) 
+			num2=$(shuf -i 0-499 -n 1)
 			c_sum="$i) $num + $num2=_____";
 			let ans=$num+$num2
 			c_sum_a="$i) $num + $num2=$ans";
