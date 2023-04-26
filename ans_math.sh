@@ -52,7 +52,7 @@ else
 			fi
 		elif [ $operator == "X" ]
 		then
-			num2=$(shuf -i 0-10 -n 1) 
+			num2=$(shuf -i 0-100 -n 1) 
 			c_sum="$i) $num X $num2=_____";
 			let ans=$num*$num2
 			c_sum_a="$i) $num X $num2=$ans";
